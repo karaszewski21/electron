@@ -1,0 +1,23 @@
+{
+  "name": "karaszeski-desktop",
+  "version": "1.0.0",
+  "description": "test app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "Patryk Karaszewski",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^12.0.0",
+    "electron-builder": "22.10.5"
+  },
+  "build": {
+    "appId": "com.karaszewski.app",
+    "copyright": "Copyright © year ${author}",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
