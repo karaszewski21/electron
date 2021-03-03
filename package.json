@@ -1,12 +1,12 @@
 {
   "name": "karaszeski-desktop",
-  "version": "v1.0.2",
+  "version": "v1.0.4",
   "description": "test app",
   "main": "main.js",
   "scripts": {
     "start": "electron . --watch",
-    "build": "electron-builder",
-    "publish": "electron-builder --publish always"
+    "build": "electron-builder build --win --publish never",
+    "publish": "electron-builder build --publish always"
   },
   "author": "Patryk Karaszewski",
   "license": "MIT",
