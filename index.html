@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Hello World!</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-</head>
-<body style="background: white;">
-    <h1>Hello World!</h1>
-    <p>
-        We are using node <script>document.write(process.versions.node)</script>,
-        Chrome <script>document.write(process.versions.chrome)</script>,
-        and Electron <script>document.write(process.versions.electron)</script>.
-    </p>
-</body>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Hello Patryk Kraszewski i Zuzanna</h1>
+    <p id="version"></p>
+
+    <div id="notification" class="hidden">
+      <p id="message"></p>
+      <button id="close-button" onClick="versionEvent.closeNotification()">
+        Close
+      </button>
+      <button
+        id="restart-button"
+        onClick="versionEvent.restartApp()"
+        class="hidden"
+      >
+        Restart
+      </button>
+    </div>
+
+    <script>
+      const versionEvent = window["electron"];
+      const notification = document.getElementById("notification");
+
+      versionEvent.getAppVersion();
+    </script>
+  </body>
 </html>

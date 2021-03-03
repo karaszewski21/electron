@@ -1,11 +1,12 @@
 {
   "name": "karaszeski-desktop",
-  "version": "1.0.0",
+  "version": "v1.0.2",
   "description": "test app",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-builder"
+    "start": "electron . --watch",
+    "build": "electron-builder",
+    "publish": "electron-builder --publish always"
   },
   "author": "Patryk Karaszewski",
   "license": "MIT",
@@ -13,11 +14,22 @@
     "electron": "^12.0.0",
     "electron-builder": "22.10.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karaszewski21/electron.git"
+  },
   "build": {
     "appId": "com.karaszewski.app",
     "copyright": "Copyright © year ${author}",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "publish": {
+        "provider": "github",
+        "token": "a6ab3cb319d2c3bceef180a9621933ce1c66f485"
+      }
     }
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.8"
   }
 }
